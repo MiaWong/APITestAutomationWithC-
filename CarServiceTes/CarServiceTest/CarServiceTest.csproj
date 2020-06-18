@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{648FFD24-0C8D-4336-981E-73BA29088EEA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Expedia.CarInterface.CarServiceTest</RootNamespace>
+    <AssemblyName>CarServiceTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\BuildSupport\3rdParty\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\BuildSupport\3rdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Noemax.WCFX, Version=4.0.12.0, Culture=neutral, PublicKeyToken=4c0defa954f97f18, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BuildSupport\3rdParty\CarAPITestExternal\bin\Noemax.WCFX.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Communication\CommunicationInformation.cs" />
+    <Compile Include="Communication\CommunicationManager.cs" />
+    <Compile Include="Communication\CommunicationUtil.cs" />
+    <Compile Include="Communication\CurrencyConversionRequest.cs" />
+    <Compile Include="Communication\MessageEncodeDecode.cs" />
+    <Compile Include="Communication\MessageFormat.cs" />
+    <Compile Include="Communication\MessageProtocol.cs" />
+    <Compile Include="Communication\SOAPProtocol.cs" />
+    <Compile Include="DataCollectionObjects\CarErrorData.cs" />
+    <Compile Include="DataCollectionObjects\CarProductData.cs" />
+    <Compile Include="DataCollectionObjects\CostPriceData.cs" />
+    <Compile Include="DataCollectionObjects\CostPriceLineItem.cs" />
+    <Compile Include="DataCollectionObjects\CarBSData.cs" />
+    <Compile Include="DataCollectionObjects\MessageData.cs" />
+    <Compile Include="DataCollectionObjects\MessageDataItem.cs" />
+    <Compile Include="DataCollectionObjects\SearchCriteriaData.cs" />
+    <Compile Include="DBOperation\AmadeusSessionManager.cs" />
+    <Compile Include="DBOperation\CarAmadeusSCS.cs" />
+    <Compile Include="DBOperation\CarBSDB.cs" />
+    <Compile Include="DBOperation\CarItemDBQueryInputsFromConfigs.cs" />
+    <Compile Include="DBOperation\CarSCS.cs" />
+    <Compile Include="DBOperation\CarSSDB.cs" />
+    <Compile Include="DBOperation\SupplierItemMap.cs" />
+    <Compile Include="DBOperation\DBUtil\CarAmaduesSCSTbl.cs" />
+    <Compile Include="DBOperation\DBUtil\CarBS.cs" />
+    <Compile Include="DBOperation\CarLog.cs" />
+    <Compile Include="DBOperation\CarMicronNexusSCS.cs" />
+    <Compile Include="DBOperation\CarProductCatalogID.cs" />
+    <Compile Include="DBOperation\CarsBooking.cs" />
+    <Compile Include="DBOperation\CarsInventory.cs" />
+    <Compile Include="DBOperation\CarWorldspanSCS.cs" />
+    <Compile Include="DBOperation\ConfigurationMaster.cs" />
+    <Compile Include="DBOperation\DBUtil\CarBSConfigCheckUtil.cs" />
+    <Compile Include="DBOperation\DBUtil\CarBSTbl.cs" />
+    <Compile Include="DBOperation\DBUtil\CarsBookingTbl.cs" />
+    <Compile Include="DBOperation\DBUtil\CarsInventoryTbl.cs" />
+    <Compile Include="DBOperation\CarTitaniumSCS.cs" />
+    <Compile Include="DBOperation\ErrorMap.cs" />
+    <Compile Include="DBOperation\ExternalSupplyServiceDomainValueMap.cs" />
+    <Compile Include="DBOperation\ForeignExchangeRates.cs" />
+    <Compile Include="DBOperation\POSClientSupplierConfigurations.cs" />
+    <Compile Include="DBOperation\POSToAmadeusDefaultSegmentMap.cs" />
+    <Compile Include="DBOperation\PosToWorldspanDefaultSegmentMap.cs" />
+    <Compile Include="DBOperation\SupplyDomain.cs" />
+    <Compile Include="DBOperation\TravServer.cs" />
+    <Compile Include="ExceptionFacade\CarErrorMessage.cs" />
+    <Compile Include="ExceptionFacade\CarException.cs" />
+    <Compile Include="RequestGenerator\Bugatti\BugattiSearchRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\CarBSOMS\CarBSOMCancelV1Generator_NewNamespace.cs" />
+    <Compile Include="RequestGenerator\CarBSOMS\CarBSOMGetChangeDetailV1Generator.cs" />
+    <Compile Include="RequestGenerator\CarBSOMS\CarBSOMGetReservationV1Generator_NewNamespace.cs" />
+    <Compile Include="RequestGenerator\CarBSOMS\CarBSOMReserveV1Generator_NewNamespace.cs" />
+    <Compile Include="RequestGenerator\CarBS\CarBSLocationIATASearchV1Generator.cs" />
+    <Compile Include="RequestGenerator\CarBS\CarBSSearchRequestFromLocationAPI.cs" />
+    <Compile Include="RequestGenerator\CarSCS\SupplierItemMapRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\CarVendorLocationService\flushRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\CarVendorLocationService\CVLUpdateRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\CarVendorLocationService\getCVLLocationsRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\CarVendorLocationService\loadProviderLocationsRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\CarVendorLocationService\mapProviderLocationsToCVLRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\Common\CarCommonMessageTypeV4Generator.cs" />
+    <Compile Include="RequestGenerator\Common\CarCommonRequestGenerator_v5.cs" />
+    <Compile Include="RequestGenerator\Common\CarCommonReserverGenerator.cs" />
+    <Compile Include="RequestGenerator\Common\CarDefaultRequestValue.cs" />
+    <Compile Include="RequestGenerator\Common\CarLocationIataSearchBuild.cs" />
+    <Compile Include="RequestGenerator\Common\CarTestCaseData.cs" />
+    <Compile Include="RequestGenerator\ComponentGenerator\CarBS\CarBSOMSComponentGenerator.cs" />
+    <Compile Include="RequestGenerator\ComponentGenerator\CarBS\CarBSReserveComponentGenerator.cs" />
+    <Compile Include="RequestGenerator\ComponentGenerator\CarBS\CarBSSearchBaseComGenerator.cs" />
+    <Compile Include="RequestGenerator\ComponentGenerator\CarBS\CarBSSearchCriteriaListGenerator.cs" />
+    <Compile Include="RequestGenerator\ComponentGenerator\CarBS\CarTransportationSegmentGenerator.cs" />
+    <Compile Include="RequestGenerator\ComponentGenerator\CarSCS\CarSCSSearchBaseComGenerator.cs" />
+    <Compile Include="RequestGenerator\ComponentGenerator\CarSCS\CarSCSSearchCriteriaListGenerator.cs" />
+    <Compile Include="RequestGenerator\CarSCS\ExternalDomainValueMapRequestGenerator.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSCancelProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSCancelSendProcess.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSGetChangeDetailProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSGetRetrieveProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSReserveSendProcess.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSReserveProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSReserveSpoofeProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSReserveSendProcess_NewNamespace.cs" />
+    <Compile Include="RequestSenderFacade\CarBSOMS\CarBSOMSCancelSendProcess_NewNamespace.cs" />
+    <Compile Include="RequestSenderFacade\CarBS\CarBSCancelProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBS\CarBSGetCostAndAvailProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBS\CarBSGetDetailsProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBS\CarBSGetResevationProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBS\CarBSReserveProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBS\CarBSSearchProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarBS\CarBSShopMsgSendProcess.cs" />
+    <Compile Include="RequestSenderFacade\CarBS\CarLocationIataSearchProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarSCS\CarSCSCancelProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarSCS\CarSCSGetReservationProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarSCS\CarSCSReserveAndCancelProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarSCS\CarSCSSearchProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarSCS\CarSCSGetDetailProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarSCS\CarSCSGetCostAndAvailProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\CarSS\CarSSSearchProcessFacade.cs" />
+    <Compile Include="RequestSenderFacade\PrepareDataFacade.cs" />
+    <Compile Include="RequestSenderFacade\Common\RequestSender.cs" />
+    <Compile Include="RequestSenderFacade\Common\RequestSender_NewNamespace.cs" />
+    <Compile Include="RequestSenderFacade\ServiceConfig\CarBS\PackageDynamicMarkupFacade.cs" />
+    <Compile Include="TestDataGenenator\ActualDataExtractor\DataCollection\DataCollectionUtil.cs" />
+    <Compile Include="TestDataGenenator\ActualDataExtractor\DataLog\ActualValuesExtractor.cs" />
+    <Compile Include="TestDataGenenator\ActualDataExtractor\CarBSCostAndPricing\CostListPriceListActualValuesExtractor.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\Booking Logging\BookLogExpValuesGenerator.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\Booking Logging\EBL\EBL_CarReservationData.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\Booking Logging\EBL\EBL_CarReservationDataExtended.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\CarBSCostAndPricing\GDSPCommissionPricingExpectedValuesGenerator.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\CarBSCostAndPricing\GDSPMarkupPricingExpectedValuesGenerator.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\CommonMethodsForExpectValueExtract.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\CarBSCostAndPricing\MerchantPricingExpectedValuesGenerator.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\CarBSCostAndPricing\PackageDynamicMarkupExpectValuesGenerator.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataCollection\DataCollection_CarBSGetCostAndAvail.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataCollection\DataCollection_CarBSGetDetails.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataCollection\DataCollection_CarBSSearch.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataCollection\DataCollection_CarProduct.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataCollection\DataCollection_MessageData.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataLog\DataLogSCSDownstream.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataLog\DataLog.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataLog\DataLogExpectedValuesGenerator.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataLog\DataLogUtil.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataLog\DataLog_AmadeusSCS.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataLog\DataLog_CarBS.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\DataLog\DataLog_CarBS_OMSBooking.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\MaseratiBookingLog\CarsBooking_ BookingItemCarInventory.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\MaseratiBookingLog\CarsBooking_AmountUtil.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\MaseratiBookingLog\CarsBooking_Booking.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\MaseratiBookingLog\CarSBooking_BookingAmount.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\MaseratiBookingLog\CarsBooking_BookingItem.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\MaseratiBookingLog\CarsBooking_BookingItemCar.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\MaseratiBookingLog\CarsBooking_BookingItemCarMarkup_ExpValueGen.cs" />
+    <Compile Include="TestDataGenenator\ExpectedDataGenerator\MaseratiBookingLog\CarsBooking_BookingItemCarMarkupExtended_ExpValueGen.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ACAQRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ACAQResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ACCMResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ACSQResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ADBIRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ADBIResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\CommonNodeReadMethods.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ARIAResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\MaseratiNodeBuildUtil.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\MNMessageReader\VRSRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\PaymentVaultReader\PVRQResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TILocationReq.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TILocationRsp.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TVRBReq.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TVRBRsp.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TVRRRsp.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TVRRReq.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TICommonNodeReader.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TVARRsp.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TVARReq.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TVRSReq.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\TIMessageReader\TVRSRsp.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\URRRResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\URRRRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\VCRRReq.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\VCRRRsp.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\VRURRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\VRURResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\UAPICommonNodeReader.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\VSARReq.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\UAPIMessageReader\VSARRsp.cs" />
+    <Compile Include="TestDataGenenator\MessageVersion\CarBSMessageVersion.cs" />
+    <Compile Include="TestDataGenenator\MessageVersion\CarSCSMessageVersion.cs" />
+    <Compile Include="TestDataGenenator\MessageVersion\CarSSMessageVersion.cs" />
+    <Compile Include="TestDataGenenator\RequestParameter\CarProductProcessFilter.cs" />
+    <Compile Include="TestDataGenenator\RequestParameter\RequestParaCancel.cs" />
+    <Compile Include="TestDataGenenator\RequestParameter\RequestParaGetReservation.cs" />
+    <Compile Include="TestDataGenenator\RequestParameter\RequestParaOMSCancel.cs" />
+    <Compile Include="TestDataGenenator\RequestParameter\RequestParaOMSReserve.cs" />
+    <Compile Include="TestDataGenenator\RequestParameter\RequestParaReserve.cs" />
+    <Compile Include="TestDataGenenator\RequestParameter\RequestProcessFilter.cs" />
+    <Compile Include="TestDataGenenator\RequestParameter\RequestParaData.cs" />
+    <Compile Include="TestDataGenenator\TestConfigData\ServiceConfig\TestErrorMapConfigurationData.cs" />
+    <Compile Include="TestDataGenenator\TestConfigData\ServiceConfig\PackageDynamicMarkupTestData.cs" />
+    <Compile Include="TestDataGenenator\TestConfigData\ServiceConfig\TestSupplierConfigurationData.cs" />
+    <Compile Include="TestDataGenenator\TestConfigData\TestTimeData.cs" />
+    <Compile Include="TestDataGenenator\TestConfigData\TestDataBase.cs" />
+    <Compile Include="TestDataGenenator\TestConfigData\TestDataReserve.cs" />
+    <Compile Include="TestDataGenenator\TestConfigData\TestDataErrHandle.cs" />
+    <Compile Include="TestDataGenenator\TestConfigData\TestDataGEOLocation.cs" />
+    <Compile Include="TestDataGenenator\TestDataReder\CVLUploadTestDataReader.cs" />
+    <Compile Include="TestDataGenenator\TitaniumMessageReader\TCRQRequest.cs" />
+    <Compile Include="TestDataGenenator\TitaniumMessageReader\TCRQResponse.cs" />
+    <Compile Include="TestScenarios\ScenarioReader.cs" />
+    <Compile Include="TestScenarios\TestScenarios.cs" />
+    <Compile Include="Util\CarCommonClassManager_Datalog_NewNamespace.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ACSQRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\DIRMessageReader\PNRRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\DIRMessageReader\PNRResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\DIRMessageReader\VAQRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestGenerator\CarBS\CarBSCancelRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarBS\CarBSGetReservationRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarBSOMS\CarBSOMReserveV1Generator.cs" />
+    <Compile Include="RequestGenerator\CarBS\CarBSSearchRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarBS\CarBSGetCostAndAvailRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarBS\CarBSGetDetailsRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarBS\CarBSReserveRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarBSOMS\CarBSOMGetReservationV1Generator.cs" />
+    <Compile Include="RequestGenerator\CarBSOMS\CarBSOMCancelV1Generator.cs" />
+    <Compile Include="RequestGenerator\CarSCS\CarSCSGetDetailsRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSCS\CarSCSLocationSearchRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\CarSCS\CarSCSReserveRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSCS\CarSCSCancelRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSCS\CarSCSGetReservationRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSS\CarSSCancelRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSS\CarSSGetCostAndAvailRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSS\CarSSGetDetailsRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSS\CarSSGetReservationRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSS\CarSSReserveRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSS\CarSSSearchRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\Common\CarCommonMessageTypeV5Generator.cs" />
+    <Compile Include="RequestGenerator\Common\CarCommonRequestGenerator.cs" />
+    <Compile Include="RequestGenerator\CarSCS\CarSCSGetCostAndAvailRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\CarSCS\CarSCSSearchRequestV4Generator.cs" />
+    <Compile Include="RequestGenerator\ServiceConfig\HttpRequestURLGenerator.cs" />
+    <Compile Include="Util\CarCommonAlgorithmManager.cs" />
+    <Compile Include="Util\CarCommonClassManager.cs" />
+    <Compile Include="Util\CarCommonClassManager_Datalog.cs" />
+    <Compile Include="Util\CarCommonEnumManager.cs" />
+    <Compile Include="Util\CarConfigurationManager.cs" />
+    <Compile Include="Util\CarXSDRelatedMethodManager.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\APRQRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\APRQResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ARISRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\AmadeusMessageReader\ARISResponse.cs" />
+    <Compile Include="Util\EmbededFileOperation.cs" />
+    <Compile Include="Util\ErrorHandling.cs" />
+    <Compile Include="Util\MediaSearchUtil.cs" />
+    <Compile Include="Util\RegexUtil.cs" />
+    <Compile Include="Util\ReportHelper.cs" />
+    <Compile Include="Util\RetryLogic.cs" />
+    <Compile Include="Util\ServiceConfigUtil.cs" />
+    <Compile Include="Util\CRSLogHandler.cs" />
+    <Compile Include="Util\FileManager.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\DIRMessageReader\VAQResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\DIRMessageReader\VRDRequest.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\DIRMessageReader\VRDResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\MNMessageReader\VARResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\MNMessageReader\VRRResponse.cs" />
+    <Compile Include="TestDataGenenator\GDSMessageReader\MNMessageReader\VRSResponse.cs" />
+    <Compile Include="Util\Print.cs" />
+    <Compile Include="Util\TransferTypeUtil.cs" />
+    <Compile Include="Util\VendorMonitor.cs" />
+    <Compile Include="Util\VoucherUtil.cs" />
+    <Compile Include="Util\XmlDocUtil.cs" />
+    <Compile Include="Verification\BookingLogging_EBL2\EBL2Verification.cs" />
+    <Compile Include="Verification\Bugatti\BugattiSearchVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSCancelVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSGetCostAndAvailVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSGetdetailsVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSGetDetaisFinancialNotAvailableVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSGetOrderProcessVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSGetReservationVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSMediaSearchVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMCancelVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMCancelVerifier_NewNamespace.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMGetChangeDetailVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMGetReservationVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMGetReservationVerifier_NewNamespace.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMReserveErrorHandlingVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMReserveVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMReserveVerifier_NewNamespace.cs" />
+    <Compile Include="Verification\CarBS\CarBSOMSRetrieveVerification.cs" />
+    <Compile Include="Verification\CarBS\CarBSReserveVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSSearchVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarBSServiceConfigVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarLocationIataSearchVerifier.cs" />
+    <Compile Include="Verification\CarBS\CarProductTokenVerifier.cs" />
+    <Compile Include="Verification\CarBS\MultiCacheVerifier.cs" />
+    <Compile Include="Verification\CarSCS\CarSCSCancelVerifier.cs" />
+    <Compile Include="Verification\CarSCS\CarSCSCommonVerifier.cs" />
+    <Compile Include="Verification\CarSCS\CarSCSGetCostAndAvailVerifier.cs" />
+    <Compile Include="Verification\CarSCS\CarSCSGetdetailsVerifier.cs" />
+    <Compile Include="Verification\CarSCS\CarSCSGetReservationVerifier.cs" />
+    <Compile Include="Verification\CarSCS\CarSCSReserveVerifier.cs" />
+    <Compile Include="Verification\CarSCS\CarSCSSearchVerifier.cs" />
+    <Compile Include="Verification\CarSCS\SupplierItemMapVerifier.cs" />
+    <Compile Include="Verification\CarSCS\ExternalDomainValueMapVerifier.cs" />
+    <Compile Include="Verification\CarSS\CarSSCancelVerifier.cs" />
+    <Compile Include="Verification\CarSS\CarSSCommonVerifier.cs" />
+    <Compile Include="Verification\CarSS\CarSSGetCostAndAvailVerifier.cs" />
+    <Compile Include="Verification\CarSS\CarSSGetdetailsVerifier.cs" />
+    <Compile Include="Verification\CarSS\CarSSGetReservationVerifier.cs" />
+    <Compile Include="Verification\CarSS\CarSSReserveVerifier.cs" />
+    <Compile Include="Verification\CarSS\CarSSSearchVerifier.cs" />
+    <Compile Include="Verification\CarVendorLocationService\CVLProLocConvertHelper.cs" />
+    <Compile Include="Verification\CarVendorLocationService\CVLUpdateVerifier.cs" />
+    <Compile Include="Verification\CarVendorLocationService\JsonTools.cs" />
+    <Compile Include="Verification\CarVendorLocationService\MapProviderLocationsToCVLRequest.cs" />
+    <Compile Include="Verification\CarVendorLocationService\MapProviderLocationsToCVLResponse.cs" />
+    <Compile Include="Verification\CarVendorLocationService\OtaVWFToCarLocationCategoryId.cs" />
+    <Compile Include="Verification\CarVendorLocationService\ProviderLocationTestDataGenerator.cs" />
+    <Compile Include="Verification\CarVendorLocationService\TitaniumCarVendorLocationUpdateVerifier.cs" />
+    <Compile Include="Verification\CarVendorLocationService\LocationMathingUtil.cs" />
+    <Compile Include="Verification\CarVendorLocationService\LocationEqualVerifier.cs" />
+    <Compile Include="Verification\CarVendorLocationService\LocationResponseVerifier.cs" />
+    <Compile Include="Verification\Common\CarMessageAssert.cs" />
+    <Compile Include="Verification\Common\CarMileageRestrictionVerifier.cs" />
+    <Compile Include="Verification\Common\CarProductVerifier.cs" />
+    <Compile Include="Verification\Common\CarsBooking_BookingItemCarMarkupExtended.cs" />
+    <Compile Include="Verification\Common\CarBookingVerifier.cs" />
+    <Compile Include="Verification\Common\CarBookingVerifier_NewNamespace.cs" />
+    <Compile Include="Verification\Common\CarNodesMappingVerifier.cs" />
+    <Compile Include="Verification\Common\CarSBooking_BookingAmount.cs" />
+    <Compile Include="Verification\Common\CarSBooking_BookingItemCar.cs" />
+    <Compile Include="Verification\Common\CarSearchResultVerifier.cs" />
+    <Compile Include="Verification\Common\CarShuttleCategoryCodeVerifier.cs" />
+    <Compile Include="Verification\Common\CarsBooking_BookingItemCarMarkup.cs" />
+    <Compile Include="Verification\Common\CommonComparisionMethods.cs" />
+    <Compile Include="Verification\Common\CommonTypeVerifier.cs" />
+    <Compile Include="Verification\Common\CostListVerifier.cs" />
+    <Compile Include="Verification\Common\DataCollectionVerifier.cs" />
+    <Compile Include="Verification\Common\EnhancedBookingLogging_CarBS.cs" />
+    <Compile Include="Verification\Common\ErrorMapping.cs" />
+    <Compile Include="Verification\Common\EventlogVerifier.cs" />
+    <Compile Include="Verification\Common\OMSBookingLoggingVerifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Verification\Common\SeedDataInPoSToWorldspanMapVerifier.cs" />
+    <Compile Include="Verification\Common\PNRRequestVerifier.cs" />
+    <Compile Include="Verification\Common\PriceListVerifier.cs" />
+    <Compile Include="Verification\Common\TravellerVerifier.cs" />
+    <Compile Include="Verification\DataLog\DataLogUtil.cs" />
+    <Compile Include="Verification\DataLog\DataLogVerifier.cs" />
+    <Compile Include="Verification\DataLog\DataLogVerifier_MNSCS.cs" />
+    <Compile Include="Verification\DataLog\DatalogVerifier_OMS.cs" />
+    <Compile Include="Verification\DataLog\DataLog_PerfMetrics.cs" />
+    <Compile Include="Verification\GDSMessages\ACAQVerifier.cs" />
+    <Compile Include="Verification\GDSMessages\ACSQVerifier.cs" />
+    <Compile Include="Verification\GDSMessages\DIRVerifier.cs" />
+    <Compile Include="Verification\GDSMessages\VARVerifier.cs" />
+    <Compile Include="Verification\GDSMessages\VRRVerifier.cs" />
+    <Compile Include="Verification\GDSMessages\VRSVerifier.cs" />
+    <Compile Include="Verification\IsPNRCancelSuccessInCancelJobLog.cs" />
+    <Compile Include="Verification\MaseratiBookingLogging\LegacyBookingLoggingVerifier.cs" />
+    <Compile Include="Verification\MaseratiBookingLogging\MaseratiBookingLoggingAssert.cs" />
+    <Compile Include="Verification\OMS\CarBSOMSCarMIPSupportVerify.cs" />
+    <Compile Include="Verification\OMS\CarBSOMSCouponCodeMapVerifciaton.cs" />
+    <Compile Include="Verification\OMS\CarOMSReserveEVoucherBookingNoticeErrorVerification.cs" />
+    <Compile Include="Verification\OMS\CarOMSReserveSupportLoyaltyNumberVerify.cs" />
+    <Compile Include="Verification\OMS\CarOMSReserveWithGuaranteePaymentForHertzVerifier.cs" />
+    <Compile Include="Verification\OMS\OMSCommonVerification.cs" />
+    <Compile Include="Verification\OMS\OMSSpecialEquipmentEnhancementVerification.cs" />
+    <Compile Include="Verification\SupplierConfig\SupplierConfigVerifier.cs" />
+    <Compile Include="XSDObjects\AirTypes\E3_AirTypes_V4.cs" />
+    <Compile Include="XSDObjects\BaseTypes\E3_BaseTypes_V4.cs" />
+    <Compile Include="XSDObjects\Bugatti\Cars_Common_V1.cs" />
+    <Compile Include="XSDObjects\Bugatti\Cars_Ecommerce_Shopping_V1.cs" />
+    <Compile Include="XSDObjects\CarBS\S3_Media_search_V1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XSDObjects\CarSS\S3_CarSS_Cancel_V4.cs" />
+    <Compile Include="XSDObjects\CarSS\S3_CarSS_GetCostAndAvailability_V4.cs" />
+    <Compile Include="XSDObjects\CarSS\S3_CarSS_GetDetails_V4.cs" />
+    <Compile Include="XSDObjects\CarSS\S3_CarSS_GetReservation_V4.cs" />
+    <Compile Include="XSDObjects\CarSS\S3_CarSS_Reserve_V4.cs" />
+    <Compile Include="XSDObjects\CarSS\S3_CarSS_Search_V4.cs" />
+    <Compile Include="XSDObjects\CarTypes\E3_CarTypes_V5.cs" />
+    <Compile Include="XSDObjects\ErrorTypes\E3_ErrorTypes_V4.cs" />
+    <Compile Include="XSDObjects\FinanceTypes\E3_FinanceTypes_V4.cs" />
+    <Compile Include="XSDObjects\GetChangeDetail\S3_GetChangeDetail_V1.cs" />
+    <Compile Include="XSDObjects\Location\S3_CarSCS_Location_search_V1.cs" />
+    <Compile Include="XSDObjects\Location\S3_CarSS_Location_search_V1.cs" />
+    <Compile Include="XSDObjects\Location\S3_LocationIata_search_V1.cs" />
+    <Compile Include="XSDObjects\MessageTypes\E3_MessageTypes_V4.cs" />
+    <Compile Include="XSDObjects\MessageTypes\E3_MessageTypes_V5.cs" />
+    <Compile Include="XSDObjects\OMMessages\OM_Messages_V1_NewNamespace.cs" />
+    <Compile Include="XSDObjects\PersonTypes\E3_PersonTypes_V4.cs" />
+    <Compile Include="XSDObjects\PlaceTypes\E3_PlaceTypes_V4.cs" />
+    <Compile Include="XSDObjects\TimeTypes\E3_TimeTypes_V4.cs" />
+    <Compile Include="XSDObjects\TravelTypes\E3_TravelTypes_V4.cs" />
+    <Compile Include="XSDObjects\OMDataType\OM_Datatype_V1.cs" />
+    <Compile Include="XSDObjects\OMMessages\OM_Messages_V1.cs" />
+    <Compile Include="XSDObjects\CarBS\S3_CarBS_Cancel_V4.cs" />
+    <Compile Include="XSDObjects\CarBS\S3_CarBS_GetCostAndAvailability_V4.cs" />
+    <Compile Include="XSDObjects\CarBS\S3_CarBS_GetDetails_V4.cs" />
+    <Compile Include="XSDObjects\CarBS\S3_CarBS_GetReservation_V4.cs" />
+    <Compile Include="XSDObjects\CarBS\S3_CarBS_Reserve_V4.cs" />
+    <Compile Include="XSDObjects\CarBS\S3_CarBS_Search_V4.cs" />
+    <Compile Include="XSDObjects\CarErrorTypes\S3_CarErrorTypes_V2.cs" />
+    <Compile Include="XSDObjects\CarSCS\S3_CarSCS_Cancel_V4.cs" />
+    <Compile Include="XSDObjects\CarSCS\S3_CarSCS_GetCostAndAvailability_V4.cs" />
+    <Compile Include="XSDObjects\CarSCS\S3_CarSCS_GetDetails_V4.cs" />
+    <Compile Include="XSDObjects\CarSCS\S3_CarSCS_GetReservation_V4.cs" />
+    <Compile Include="XSDObjects\CarSCS\S3_CarSCS_Reserve_V4.cs" />
+    <Compile Include="XSDObjects\CarSCS\S3_CarSCS_Search_V4.cs" />
+    <Compile Include="XSDObjects\Location\S3_Location_search_V1.cs" />
+    <Compile Include="XSDObjects\LogData\S3_LogData_V1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

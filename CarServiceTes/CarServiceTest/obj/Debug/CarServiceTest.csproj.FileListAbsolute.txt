@@ -1,0 +1,8 @@
+D:\Automation\CarServiceTes\CarServiceTest\bin\Debug\CarServiceTest.dll
+D:\Automation\CarServiceTes\CarServiceTest\bin\Debug\CarServiceTest.pdb
+D:\Automation\CarServiceTes\CarServiceTest\bin\Debug\Newtonsoft.Json.dll
+D:\Automation\CarServiceTes\CarServiceTest\bin\Debug\Noemax.WCFX.dll
+D:\Automation\CarServiceTes\CarServiceTest\obj\Debug\CarServiceTest.csprojResolveAssemblyReference.cache
+D:\Automation\CarServiceTes\CarServiceTest\obj\Debug\CarServiceTest.dll
+D:\Automation\CarServiceTes\CarServiceTest\obj\Debug\CarServiceTest.pdb
+E:\Mia\Mia  Expedia\code\Automation\CarServiceTes\CarServiceTest\obj\Debug\CarServiceTest.csprojResolveAssemblyReference.cache
